@@ -1,0 +1,16 @@
+<!-- ul:無順序リスト ol：順序リスト div：複数のタグをまとめる a:ハイパーリンクとして扱える li：リストアイテム -->
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+

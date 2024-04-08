@@ -1,0 +1,1 @@
+Start-Process -FilePath 'C:\work\VSCode\bat\copy_directory.bat' -Verbose Runas -NoNewWindow
